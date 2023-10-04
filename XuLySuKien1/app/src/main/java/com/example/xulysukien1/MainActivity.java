@@ -15,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getWiget();
+    }
+    void getWiget(){
         user = findViewById(R.id.user);
         pass = findViewById(R.id.pass);
     }
