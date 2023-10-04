@@ -9,15 +9,17 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    EditText user;
+    EditText pass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        user = findViewById(R.id.user);
+        pass = findViewById(R.id.pass);
     }
     public void XuLyLogin(View v){
         //B1: Lấy dữ liệu từ 2 EditText
-        EditText user = findViewById(R.id.user);
-        EditText pass = findViewById(R.id.pass);
         String tenDN = user.getText().toString();
         String mk = pass.getText().toString();
         //B2: Xử lí
