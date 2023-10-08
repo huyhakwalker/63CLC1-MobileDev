@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/soA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A ="
+            android:textSize="18dp"
+            android:layout_marginLeft="10dp"/>
+        <EditText
+            android:id="@+id/edtA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập số ở đây"
+            android:layout_marginLeft="20dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/soB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="B ="
+            android:textSize="18dp"
+            android:layout_marginLeft="10dp"/>
+        <EditText
+            android:id="@+id/edtB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập số ở đây"
+            android:layout_marginLeft="20dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="5dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_height="50dp">
+        <Button
+            android:id="@+id/btncong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="Xulycong"
+            android:text="+"
+            android:layout_marginRight="4dp"/>
+        <Button
+            android:id="@+id/btntru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="Xulytru"
+            android:text="-"
+            android:layout_marginRight="8dp"/>
+
+        <Button
+            android:id="@+id/btnnhan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="Xulynhan"
+            android:text="*"
+            android:layout_marginLeft="4dp"/>
+
+        <Button
+            android:id="@+id/btnchia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="Xulychia"
+            android:text="/"
+            android:layout_marginLeft="8dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/ketqua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kết quả:"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/kq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Kết quả"
+            android:textSize="18dp"
+            android:layout_marginLeft="20dp"
+            android:enabled="false"/>
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
