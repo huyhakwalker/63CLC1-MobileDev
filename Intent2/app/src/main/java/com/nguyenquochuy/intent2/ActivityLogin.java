@@ -18,6 +18,14 @@ public class ActivityLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         get();
+        OK();
+    }
+    public void get(){
+        btnOK = findViewById(R.id.btnOK);
+        edtUserName = findViewById(R.id.edtUserName);
+        edtPassWord = findViewById(R.id.edtPassWord);
+    }
+    public void OK(){
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,10 +41,5 @@ public class ActivityLogin extends AppCompatActivity {
                 }
             }
         });
-    }
-    public void get(){
-        btnOK = findViewById(R.id.btnOK);
-        edtUserName = findViewById(R.id.edtUserName);
-        edtPassWord = findViewById(R.id.edtPassWord);
     }
 }
