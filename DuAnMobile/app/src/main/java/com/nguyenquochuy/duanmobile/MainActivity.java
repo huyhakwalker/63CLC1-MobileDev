@@ -81,11 +81,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 loadCauHoiKho();
             }
         }
-
     }
     private void loadCauHoiDe(){
         if(listde != null && !listde.isEmpty()){
-            tvQuestion.setText(CurrentQuestion);
+            tvQuestion.setText(String.valueOf(CurrentQuestion));
             tvContentQuestion.setText(listde.get(i).getNoidung());
             answerAButton.setText(listde.get(i).getDA1());
             answerBButton.setText(listde.get(i).getDA2());
@@ -95,22 +94,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     private void loadCauHoiTB(){
         if(listtb != null && !listtb.isEmpty()){
-            tvQuestion.setText(CurrentQuestion);
-            tvContentQuestion.setText(listde.get(i).getNoidung());
-            answerAButton.setText(listde.get(i).getDA1());
-            answerBButton.setText(listde.get(i).getDA2());
-            answerCButton.setText(listde.get(i).getDA3());
-            answerDButton.setText(listde.get(i).getDA4());
+            tvQuestion.setText(String.valueOf(CurrentQuestion));
+            tvContentQuestion.setText(listtb.get(i).getNoidung());
+            answerAButton.setText(listtb.get(i).getDA1());
+            answerBButton.setText(listtb.get(i).getDA2());
+            answerCButton.setText(listtb.get(i).getDA3());
+            answerDButton.setText(listtb.get(i).getDA4());
         }
     }
     private void loadCauHoiKho(){
         if(listkho != null && !listkho.isEmpty()){
-            tvQuestion.setText(CurrentQuestion);
-            tvContentQuestion.setText(listde.get(i).getNoidung());
-            answerAButton.setText(listde.get(i).getDA1());
-            answerBButton.setText(listde.get(i).getDA2());
-            answerCButton.setText(listde.get(i).getDA3());
-            answerDButton.setText(listde.get(i).getDA4());
+            tvQuestion.setText(String.valueOf(CurrentQuestion));
+            tvContentQuestion.setText(listkho.get(i).getNoidung());
+            answerAButton.setText(listkho.get(i).getDA1());
+            answerBButton.setText(listkho.get(i).getDA2());
+            answerCButton.setText(listkho.get(i).getDA3());
+            answerDButton.setText(listkho.get(i).getDA4());
         }
     }
     private void initUI(){
@@ -128,9 +127,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         initUI();
 
-        listde = docCauHoiDe.layDSCauHoiDe();
-        listtb = docCauHoiTB.layDSCauHoiTB();
-        listkho = docCauHoiKho.layDSCauHoiKho();
+        listde = docCauHoiDe.layDSCauHoiDe(this);
+        listtb = docCauHoiTB.layDSCauHoiTB(this);
+        listkho = docCauHoiKho.layDSCauHoiKho(this);
         if(CurrentQuestion<=5){
             if (!listde.isEmpty()) {
                 loadCauHoiDe();
@@ -203,8 +202,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
     }
-
-
 //    private void setDataQuestion(Question question) {
 //        if(question == null){
 //            return;

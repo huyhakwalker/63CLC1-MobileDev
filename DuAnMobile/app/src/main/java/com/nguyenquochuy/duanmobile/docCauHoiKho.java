@@ -1,15 +1,19 @@
 package com.nguyenquochuy.duanmobile;
 
+import android.content.Context;
+import android.content.res.AssetManager;
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 public class docCauHoiKho {
-    public docCauHoiKho(){
-
-    }
     public String noidung;
     public String DA1;
     public String DA2;
@@ -75,24 +79,35 @@ public class docCauHoiKho {
         this.DA = DA;
     }
 
-    public static List<docCauHoiKho> layDSCauHoiKho() {
-        String fileName = "dscauhoi.txt";
+    public static List<docCauHoiKho> layDSCauHoiKho(Context context) {
+        String fileName = "dscauhoikho.txt";
         List<docCauHoiKho> list = new ArrayList<>();
+        BufferedReader br = null;
         try {
-            File file = new File(fileName);
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            docCauHoiKho item = new docCauHoiKho();
-            while ((item.noidung = br.readLine()) != null) {
-                item.DA1=br.readLine();
-                item.DA2=br.readLine();
-                item.DA3=br.readLine();
-                item.DA4=br.readLine();
-                item.DA=br.readLine();
-                list.add(new docCauHoiKho(item.noidung,item.DA1,item.DA2,item.DA3,item.DA4,item.DA));
+            AssetManager assetManager = context.getAssets();
+            InputStream inputStream = assetManager.open(fileName);
+            br = new BufferedReader(new InputStreamReader(inputStream));
+            String noidung;
+            while ((noidung = br.readLine()) != null) {
+                String DA1 = br.readLine();
+                String DA2 = br.readLine();
+                String DA3 = br.readLine();
+                String DA4 = br.readLine();
+                String DA = br.readLine();
+                list.add(new docCauHoiKho(noidung, DA1, DA2, DA3, DA4, DA));
             }
-            br.close();
+        } catch (FileNotFoundException e) {
+            Log.e("FileError", "Không tìm thấy file: " + fileName, e);
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.e("IOError", "Lỗi khi đọc file: " + fileName, e);
+        } finally {
+            try {
+                if (br != null) {
+                    br.close();
+                }
+            } catch (IOException ex) {
+                Log.e("IOError", "Lỗi khi đóng BufferedReader", ex);
+            }
         }
         return list;
     }
