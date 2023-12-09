@@ -4,17 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:padding="16dp"
     android:gravity="center"
-    android:orientation="vertical">
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    tools:context=".MainActivity">
+
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_width="272dp"
         android:layout_height="wrap_content"
-        android:text="AI LA TRIEU PHU"
-        android:textSize="30sp"
-        android:textColor="@android:color/holo_red_light"
+        android:layout_marginVertical="30dp"
+        android:fontFamily="@font/bangers"
+        android:gravity="center"
+        android:text="AI LÀ TRIỆU PHÚ"
+        android:textAlignment="center"
+        android:textColor="@color/yellow"
+        android:textSize="50dp"
         android:textStyle="bold">
+    </TextView>
+
+    <TextView
+        android:id="@+id/tv_score"
+        android:layout_width="177dp"
+        android:layout_height="50dp"
+        android:text="200.000"
+        android:background="@drawable/bg_blue_corner_30"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textAlignment="center">
     </TextView>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -24,76 +43,84 @@
             android:id="@+id/tv_content_question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
             android:paddingTop="40dp"
             android:paddingBottom="40dp"
             android:gravity="center"
             android:layout_marginTop="20dp"
+            android:background="@drawable/bg_blue_corner_10"
             android:paddingStart="10dp"
-            android:textColor="@android:color/white"
             android:paddingEnd="10dp"
-            android:background="@drawable/bg_blue_corner_10">
+            android:textColor="@android:color/white"
+            android:textSize="20sp">
         </TextView>
         <TextView
             android:id="@+id/tv_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Question 1"
+            android:layout_centerHorizontal="true"
             android:background="@drawable/bg_orange_corner_30"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingEnd="20dp"
             android:paddingStart="20dp"
-            android:textSize="20sp"
-            android:layout_centerHorizontal="true">
+            android:paddingTop="10dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="10dp"
+            android:text="Question 1">
         </TextView>
     </RelativeLayout>
+
     <Button
+        android:id="@+id/btn_answer1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_blue_corner_30"
-        android:textSize="20sp"
+        android:background="@drawable/btn_bg_blue"
         android:layout_marginTop="30dp"
-        android:textColor="@android:color/white"
         android:gravity="center"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:id="@+id/btn_answer1">
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:backgroundTint="@null">
     </Button>
+
     <Button
+        android:id="@+id/btn_answer2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_blue_corner_30"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:textColor="@android:color/white"
+        android:background="@drawable/btn_bg_blue"
         android:gravity="center"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:id="@+id/btn_answer2">
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:backgroundTint="@null">
     </Button>
+
     <Button
+        android:id="@+id/btn_answer3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_blue_corner_30"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:textColor="@android:color/white"
+        android:background="@drawable/btn_bg_blue"
         android:gravity="center"
         android:paddingTop="10dp"
+        android:layout_marginTop="10dp"
         android:paddingBottom="10dp"
-        android:id="@+id/btn_answer3">
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:backgroundTint="@null">
     </Button>
+
     <Button
+        android:id="@+id/btn_answer4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_blue_corner_30"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:textColor="@android:color/white"
+        android:background="@drawable/btn_bg_blue"
         android:gravity="center"
         android:paddingTop="10dp"
+        android:layout_marginTop="10dp"
         android:paddingBottom="10dp"
-        android:id="@+id/btn_answer4">
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:backgroundTint="@null">
     </Button>
+
 </LinearLayout>
