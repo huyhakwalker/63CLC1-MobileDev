@@ -34,17 +34,16 @@ public class MainActivity extends AppCompatActivity {
     private List<docCauHoiDe> listde;
     private List<docCauHoiTB> listtb;
     private List<docCauHoiKho> listkho;
-    private int CurrentQuestion = 1;
+    public static int CurrentQuestion = 1;
     Random rd = new Random();
     private int i = rd.nextInt(37);
-
     MediaPlayer ans_1, ans_2, ans_3, ans_4, ans_now,
                 true_1, true_2, true_3, true_4,
                 star1, star2, star3, star4, star5, star6, star7,star8,star9,star10,star11,star12,star13,star14,star15;
-    public int getCurrentQuestion() {
+
+    public static int getCurrentQuestion() {
         return CurrentQuestion;
     }
-
     private int checkTrungCauDe() {
         int index;
         do {
@@ -255,27 +254,24 @@ public class MainActivity extends AppCompatActivity {
         if (CurrentQuestion <= 5) {
             if (selectedAnswer.equals(listde.get(i).getDA())) {
                 correctAnswer(clickedButton, mediaPlayer);
-                //setScore(CurrentQuestion);
             } else {
                 gameOver(clickedButton, listde.get(i).getDA().toString());
             }
         } else if (CurrentQuestion <= 10) {
             if (selectedAnswer.equals(listtb.get(i).getDA())) {
                 correctAnswer(clickedButton, mediaPlayer);
-                //setScore(CurrentQuestion);
             } else {
                 gameOver(clickedButton, listtb.get(i).getDA().toString());
             }
         } else if (CurrentQuestion <= 15) {
             if (selectedAnswer.equals(listkho.get(i).getDA())) {
                 correctAnswer(clickedButton, mediaPlayer);
-                //setScore(CurrentQuestion);
             } else {
                 gameOver(clickedButton, listkho.get(i).getDA().toString());
             }
         }
     }
-    private void correctAnswer(Button trueButton, MediaPlayer player){
+    public void correctAnswer(Button trueButton, MediaPlayer player){
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -359,7 +355,6 @@ public class MainActivity extends AppCompatActivity {
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                CurrentQuestion = 1;
                 dialog.dismiss();
                 Intent myintent = new Intent(MainActivity.this,EndActivity.class);
                 startActivity(myintent);

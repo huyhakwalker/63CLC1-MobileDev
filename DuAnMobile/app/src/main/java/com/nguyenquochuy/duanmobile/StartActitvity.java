@@ -21,7 +21,6 @@ public class StartActitvity extends AppCompatActivity {
         welcome.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                // Khi mediaPlayer1 hoàn thành, bắt đầu phát mediaPlayer2
                 bgmusic.setLooping(true);
                 bgmusic.start();
             }
