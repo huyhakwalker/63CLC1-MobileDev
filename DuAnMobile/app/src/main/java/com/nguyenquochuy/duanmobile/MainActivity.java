@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -40,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
     MediaPlayer ans_1, ans_2, ans_3, ans_4, ans_now,
                 true_1, true_2, true_3, true_4,
                 star1, star2, star3, star4, star5, star6, star7,star8,star9,star10,star11,star12,star13,star14,star15;
+    public int getCurrentQuestion() {
+        return CurrentQuestion;
+    }
+
     private int checkTrungCauDe() {
         int index;
         do {
@@ -356,14 +361,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 CurrentQuestion = 1;
                 dialog.dismiss();
+                Intent myintent = new Intent(MainActivity.this,EndActivity.class);
+                startActivity(myintent);
             }
         });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
-//    public void setScore(int currentQuestion){
-//
-//    }
 }
 
 

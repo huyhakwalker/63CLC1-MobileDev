@@ -7,4 +7,68 @@
     android:background="@drawable/bg"
     tools:context=".EndActivity">
 
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="363dp"
+        android:layout_height="208dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="33dp"
+        android:fontFamily="@font/bangers"
+        android:gravity="center"
+        android:text="CHÚC MỪNG BẠN ĐÃ HOÀN THÀNH VÒNG CHƠI"
+        android:textAlignment="center"
+        android:textColor="@color/yellow"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_score_end"
+        android:layout_width="267dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="71dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:text="Điểm số cuối cùng của bạn là: "
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/btn_choilai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="152dp"
+        android:textStyle="bold"
+        android:text="Chơi lại"
+        app:backgroundTint="@null"
+        android:background="@drawable/bg_blue_corner_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_score_end"
+        app:layout_constraintVertical_bias="0.027" />
+
+    <Button
+        android:id="@+id/btn_trangchu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="60dp"
+        android:textStyle="bold"
+        android:text="Trang chủ"
+        app:backgroundTint="@null"
+        android:background="@drawable/bg_blue_corner_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_score_end"
+        app:layout_constraintVertical_bias="0.005" />
 </androidx.constraintlayout.widget.ConstraintLayout>
