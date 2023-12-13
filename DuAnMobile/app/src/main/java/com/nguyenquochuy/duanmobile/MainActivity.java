@@ -328,7 +328,11 @@ public class MainActivity extends AppCompatActivity {
                         tvScore.setText("85.000.000");
                         break;
                     case 15:
-                        tvScore.setText("150.000.000");
+                        tvScore.setText("85.000.000");
+                        break;
+                    case 16:
+                        Intent myintent = new Intent(MainActivity.this,EndActivity.class);
+                        startActivity(myintent);
                         break;
                 }
             }
@@ -346,7 +350,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 showDialogLose("Game Over! Đáp án đúng là " + message);
             }
-        }, 11000);
+        }, 10500);
     }
     private void showDialogLose(String message){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

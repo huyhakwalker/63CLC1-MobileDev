@@ -76,6 +76,10 @@ public class EndActivity extends AppCompatActivity {
                 break;
             case 14:
                 tv_score_end.setText("Điểm số cuối cùng của bạn là: 85.000.000");
+                endmusic.start();
+                break;
+            case 15:
+                tv_score_end.setText("Điểm số cuối cùng của bạn là: 150.000.000");
                 wingames.start();
                 break;
         }
