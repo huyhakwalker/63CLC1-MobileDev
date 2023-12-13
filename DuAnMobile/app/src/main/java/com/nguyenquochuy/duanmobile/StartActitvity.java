@@ -15,7 +15,7 @@ public class StartActitvity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_strart);
+        setContentView(R.layout.activity_start);
         get();
         welcome.start();
         welcome.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {

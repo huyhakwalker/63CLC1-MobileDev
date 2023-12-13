@@ -34,15 +34,16 @@ public class MainActivity extends AppCompatActivity {
     private List<docCauHoiDe> listde;
     private List<docCauHoiTB> listtb;
     private List<docCauHoiKho> listkho;
-    public static int CurrentQuestion = 1;
+    private int CurrentQuestion = 1;
+    public static int FinalScore;
     Random rd = new Random();
     private int i = rd.nextInt(37);
     MediaPlayer ans_1, ans_2, ans_3, ans_4, ans_now,
                 true_1, true_2, true_3, true_4,
                 star1, star2, star3, star4, star5, star6, star7,star8,star9,star10,star11,star12,star13,star14,star15;
 
-    public static int getCurrentQuestion() {
-        return CurrentQuestion;
+    public static int getFinalScore() {
+        return FinalScore;
     }
     private int checkTrungCauDe() {
         int index;
@@ -349,6 +350,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 showDialogLose("Game Over! Đáp án đúng là " + message);
+                FinalScore = CurrentQuestion;
+                CurrentQuestion = 1;
             }
         }, 10500);
     }

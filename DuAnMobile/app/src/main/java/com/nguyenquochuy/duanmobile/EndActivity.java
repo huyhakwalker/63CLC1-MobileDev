@@ -21,7 +21,7 @@ public class EndActivity extends AppCompatActivity {
         setContentView(R.layout.activity_end);
         get();
         MainActivity m = new MainActivity();
-        switch (m.getCurrentQuestion()) {
+        switch (m.getFinalScore()) {
             case 1:
                 tv_score_end.setText("Điểm số cuối cùng của bạn là: 200.000");
                 endmusic.start();
