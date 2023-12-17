@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private Button answerBButton;
     private Button answerCButton;
     private Button answerDButton;
+    private Button trogiup;
     private List<Integer> lista = new ArrayList<>();
     private List<Integer> listb = new ArrayList<>();
     private List<Integer> listc = new ArrayList<>();
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private int i = rd.nextInt(37);
     MediaPlayer ans_1, ans_2, ans_3, ans_4, ans_now,
                 true_1, true_2, true_3, true_4,
-                star1, star2, star3, star4, star5, star6, star7,star8,star9,star10,star11,star12,star13,star14,star15;
+                remove50;
 
     public static int getFinalScore() {
         return FinalScore;
@@ -139,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
         answerBButton = findViewById(R.id.btn_answer2);
         answerCButton = findViewById(R.id.btn_answer3);
         answerDButton = findViewById(R.id.btn_answer4);
+        trogiup = findViewById(R.id.trogiup);
 
         ans_1 = MediaPlayer.create(this,R.raw.ans_1);
         ans_2 = MediaPlayer.create(this,R.raw.ans_2);
@@ -151,29 +153,13 @@ public class MainActivity extends AppCompatActivity {
         true_3 = MediaPlayer.create(this,R.raw.true_3);
         true_4 = MediaPlayer.create(this,R.raw.true_4);
 
-        star1 = MediaPlayer.create(this,R.raw.start_cau1);
-        star2 = MediaPlayer.create(this,R.raw.start_cau2);
-        star3 = MediaPlayer.create(this,R.raw.start_cau3);
-        star4 = MediaPlayer.create(this,R.raw.start_cau4);
-        star5 = MediaPlayer.create(this,R.raw.start_cau5);
-        star6 = MediaPlayer.create(this,R.raw.start_cau6);
-        star7 = MediaPlayer.create(this,R.raw.start_cau7);
-        star8 = MediaPlayer.create(this,R.raw.start_cau8);
-        star9 = MediaPlayer.create(this,R.raw.start_cau9);
-        star10 = MediaPlayer.create(this,R.raw.start_cau10);
-        star11 = MediaPlayer.create(this,R.raw.start_cau11);
-        star12 = MediaPlayer.create(this,R.raw.start_cau12);
-        star13 = MediaPlayer.create(this,R.raw.start_cau13);
-        star14 = MediaPlayer.create(this,R.raw.start_cau14);
-        star15 = MediaPlayer.create(this,R.raw.start_cau15);
+        remove50 = MediaPlayer.create(this,R.raw.remove50);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         initUI();
-
         listde = docCauHoiDe.layDSCauHoiDe(this);
         listtb = docCauHoiTB.layDSCauHoiTB(this);
         listkho = docCauHoiKho.layDSCauHoiKho(this);
@@ -248,6 +234,15 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
             }
+        });
+        trogiup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                remove50.start();
+                trogiup();
+                trogiup.setVisibility(View.GONE);
+            }
+
         });
     }
     private void handleAnswerButtonClicked(Button clickedButton, MediaPlayer mediaPlayer) {
@@ -329,13 +324,14 @@ public class MainActivity extends AppCompatActivity {
                         tvScore.setText("85.000.000");
                         break;
                     case 15:
-                        tvScore.setText("85.000.000");
+                        tvScore.setText("150.000.000");
                         break;
                     case 16:
                         Intent myintent = new Intent(MainActivity.this,EndActivity.class);
                         startActivity(myintent);
                         break;
                 }
+                hienthilai();
             }
         }, 13000);
     }
@@ -369,6 +365,80 @@ public class MainActivity extends AppCompatActivity {
         });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+    private void trogiup(){
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                String ans1 = answerAButton.getText().toString();
+                String ans2 = answerBButton.getText().toString();
+                String ans3 = answerCButton.getText().toString();
+                String ans4 = answerDButton.getText().toString();
+                String c;
+                int k = CurrentQuestion;
+                if (CurrentQuestion <= 5) {
+                    c = listde.get(i).getDA();
+                    if(ans1.equals(c)){
+                        answerBButton.setVisibility(View.GONE);
+                        answerCButton.setVisibility(View.GONE);
+                    }if(ans2.equals(c)){
+                        answerAButton.setVisibility(View.GONE);
+                        answerCButton.setVisibility(View.GONE);
+                    }if(ans3.equals(c)){
+                        answerAButton.setVisibility(View.GONE);
+                        answerBButton.setVisibility(View.GONE);
+                    }if(ans4.equals(c)){
+                        answerBButton.setVisibility(View.GONE);
+                        answerCButton.setVisibility(View.GONE);
+                    }
+                } else if (CurrentQuestion <= 10) {
+                    c = listtb.get(i).getDA();
+                    if(ans1.equals(c)){
+                        answerBButton.setVisibility(View.GONE);
+                        answerCButton.setVisibility(View.GONE);
+                    }if(ans2.equals(c)){
+                        answerAButton.setVisibility(View.GONE);
+                        answerCButton.setVisibility(View.GONE);
+                    }if(ans3.equals(c)){
+                        answerAButton.setVisibility(View.GONE);
+                        answerBButton.setVisibility(View.GONE);
+                    }if(ans4.equals(c)){
+                        answerBButton.setVisibility(View.GONE);
+                        answerCButton.setVisibility(View.GONE);
+                    }
+                } else if (CurrentQuestion <= 15) {
+                    c = listkho.get(i).getDA();
+                    if(ans1.equals(c)){
+                        answerBButton.setVisibility(View.GONE);
+                        answerCButton.setVisibility(View.GONE);
+                    }if(ans2.equals(c)){
+                        answerAButton.setVisibility(View.GONE);
+                        answerCButton.setVisibility(View.GONE);
+                    }if(ans3.equals(c)){
+                        answerAButton.setVisibility(View.GONE);
+                        answerBButton.setVisibility(View.GONE);
+                    }if(ans4.equals(c)){
+                        answerBButton.setVisibility(View.GONE);
+                        answerCButton.setVisibility(View.GONE);
+                    }
+                }
+            }
+        }, 4500);
+
+    }
+    private void hienthilai(){
+        if (answerAButton.getVisibility() == View.GONE) {
+            answerAButton.setVisibility(View.VISIBLE);
+        }
+        if (answerBButton.getVisibility() == View.GONE) {
+            answerBButton.setVisibility(View.VISIBLE);
+        }
+        if (answerCButton.getVisibility() == View.GONE) {
+            answerCButton.setVisibility(View.VISIBLE);
+        }
+        if (answerDButton.getVisibility() == View.GONE) {
+            answerDButton.setVisibility(View.VISIBLE);
+        }
     }
 }
 
