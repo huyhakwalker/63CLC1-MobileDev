@@ -11,7 +11,7 @@ import android.widget.Button;
 public class StartActitvity extends AppCompatActivity {
 
     private MediaPlayer bgmusic, welcome;
-    Button btn_start;
+    Button btn_start, btn_info;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,10 +34,20 @@ public class StartActitvity extends AppCompatActivity {
                 bgmusic.pause();
             }
         });
+        btn_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myintent = new Intent(StartActitvity.this,IntroductionActivity.class);
+                startActivity(myintent);
+                welcome.pause();
+                bgmusic.pause();
+            }
+        });
     }
     public void get(){
         bgmusic = MediaPlayer.create(this,R.raw.bgmusic);
         btn_start = findViewById(R.id.btn_start);
         welcome = MediaPlayer.create(this,R.raw.welcomegame);
+        btn_info = findViewById(R.id.btn_info);
     }
 }
