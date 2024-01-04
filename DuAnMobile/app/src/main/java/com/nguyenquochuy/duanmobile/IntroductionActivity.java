@@ -20,6 +20,7 @@ public class IntroductionActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent myintent = new Intent(IntroductionActivity.this,StartActitvity.class);
                 startActivity(myintent);
+                
             }
         });
     }
